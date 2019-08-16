@@ -11,10 +11,11 @@ FROM raspbian/jessie:041518
 #--uid ${NB_UID} \
 #${NB_USER}
  
-RUN users
- 
+RUN echo 'this'
+USER root
+
+RUN apt update
+#RUN sudo apt install python python-pip
 USER pi
 
-RUN sudo apt update
-#RUN sudo apt install python python-pip
 RUN pip install --no-cache-dir notebook==5.7.8
