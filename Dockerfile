@@ -13,4 +13,4 @@ RUN adduser --disabled-password \
 
 RUN apt update
 #RUN sudo apt install python python-pip
-RUN sudo pip install --no-cache-dir notebook==5.7.8
+RUN pip install --no-cache-dir notebook==5.7.8
