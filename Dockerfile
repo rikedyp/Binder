@@ -11,6 +11,8 @@ FROM raspbian/jessie:041518
 #--uid ${NB_UID} \
 #${NB_USER}
  
+RUN users
+ 
 USER pi
 
 RUN sudo apt update
