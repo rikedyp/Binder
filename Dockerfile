@@ -4,9 +4,11 @@ FROM rikedyp/dyalog-jupyter:12345
 
 USER root
 
+#COPY ${HOME}/* 
+
 RUN userdel -r dyalog
 
-ARG NB_USER=dyalog
+ARG NB_USER=joyvan
 ARG NB_UID=1000
 ENV USER ${NB_USER}
 ENV NB_UID ${NB_UID}
