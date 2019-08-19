@@ -2,6 +2,8 @@ FROM rikedyp/dyalog-jupyter:12345
 
 #RUN pip install --no-cache-dir notebook==5.7.8
 
+USER root
+
 ARG NB_USER=dyalog
 ARG NB_UID=1000
 ENV USER ${NB_USER}
@@ -15,6 +17,6 @@ RUN adduser --disabled-password \
     
 # Make sure the contents of our repo are in ${HOME}
 COPY . ${HOME}
-USER root
+#USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
