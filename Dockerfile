@@ -12,7 +12,7 @@ RUN alias python=python3
 
 #COPY ${HOME}/* 
 #USER root
-RUN userdel -r dyalog
+#RUN userdel -r dyalog
 # create user with a home directory
 ENV NB_USER jovyan
 ENV NB_UID 1000
@@ -36,8 +36,13 @@ USER ${NB_USER}
 
 RUN jupyter notebook --generate-config
 #CMD ["jupyter", "notebook", "--ip", "8888:8888"]
+<<<<<<< HEAD
 ENTRYPOINT ["jupyter","notebook","--ip","0.0.0.0:8888:8888"]
 #ENTRYPOINT ["echo","hello"]
+=======
+#ENTRYPOINT ["jupyter","notebook","--ip","8888:8888"]
+#ENTRYPOINT ["cat","/etc/hosts"]
+>>>>>>> 0a4a4dee36d2df10d9be8a1fc2b698b3e941f658
 #CMD ["jupyter", "notebook", "--ip", "8888:8888"]
 #CMD ["localhost"]
-#CMD jupyter notebook --ip 8888:8888
+CMD jupyter notebook --ip 8888:8888
