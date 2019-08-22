@@ -25,3 +25,6 @@ USER root
 COPY . ${HOME}
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
+
+RUN jupyter notebook --generate-config
+CMD ["jupyter", "notebook", "--ip", "8888:8888"]
