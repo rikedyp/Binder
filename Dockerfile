@@ -8,17 +8,16 @@ FROM rikedyp/dyalog-jupyter:12345
 USER root
 RUN userdel -r dyalog
 # create user with a home directory
-ARG NB_USER
-ARG NB_UID
-ENV USER ${NB_USER}
+ENV NB_USER jovyan
+ENV NB_UID 1000
 ENV HOME /home/${NB_USER}
 
 RUN adduser --disabled-password \
     --gecos "Default user" \
     --uid ${NB_UID} \
     ${NB_USER}
-WORKDIR ${HOME}
-USER ${USER}
+    
+USER ${NB_USER}
 
-RUN jupyter notebook --generate-config
-CMD ["jupyter", "notebook", "--ip", "8888:8888"]
+#RUN jupyter notebook --generate-config
+CMD ["jupyter", "notebook", "--ip=8888:8888"]
