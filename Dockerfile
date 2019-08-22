@@ -5,7 +5,7 @@ FROM rikedyp/dyalog-jupyter:12345
 
 
 #COPY ${HOME}/* 
-
+USER root
 #RUN userdel -r dyalog
 
 ARG NB_USER=dyalog
@@ -19,7 +19,7 @@ ENV HOME /home/${NB_USER}
 #    --uid ${NB_UID} \
 #    ${NB_USER}
 
-USER root
+
 
 # Make sure the contents of our repo are in ${HOME}
 COPY . ${HOME}
