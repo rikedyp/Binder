@@ -31,5 +31,10 @@ USER ${NB_USER}
 WORKDIR ${HOME}
 USER ${NB_USER}
 
-#RUN jupyter notebook --generate-config
+RUN git clone https://github.com/Dyalog/dyalog-jupyter-kernel
+RUN cd dyalog-jupyter-kernel
+RUN ./install.sh
+RUN cd ~
+
+RUN jupyter notebook --generate-config
 CMD ["jupyter", "notebook", "--ip", "8888:8888"]
