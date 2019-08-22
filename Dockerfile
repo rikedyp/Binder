@@ -1,6 +1,6 @@
 #FROM rikedyp/dyalog-jupyter:12345
-#FROM dyalog/ubuntu:1804-mingw
-FROM dyalog/dyalog:17.1
+FROM dyalog/ubuntu:1804-mingw
+#FROM dyalog/dyalog:17.1
 
 USER root
 
@@ -12,7 +12,7 @@ RUN alias python=python3
 
 #COPY ${HOME}/* 
 #USER root
-RUN userdel -r dyalog
+#RUN userdel -r dyalog
 # create user with a home directory
 ENV NB_USER jovyan
 ENV NB_UID 1000
@@ -36,8 +36,8 @@ RUN cd dyalog-jupyter-kernel && ./install.sh
 
 RUN jupyter notebook --generate-config
 #CMD ["jupyter", "notebook", "--ip", "8888:8888"]
-ENTRYPOINT ["jupyter","notebook","--ip","8888:8888"]
+#ENTRYPOINT ["jupyter","notebook","--ip","8888:8888"]
 #ENTRYPOINT ["cat","/etc/hosts"]
 #CMD ["jupyter", "notebook", "--ip", "8888:8888"]
 #CMD ["localhost"]
-#CMD jupyter notebook --ip 8888:8888
+CMD jupyter notebook --ip 8888:8888
