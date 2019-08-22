@@ -36,6 +36,8 @@ RUN cd dyalog-jupyter-kernel && ./install.sh
 
 RUN jupyter notebook --generate-config
 #CMD ["jupyter", "notebook", "--ip", "8888:8888"]
-ENTRYPOINT ["bash"]
+ENTRYPOINT ["jupyter","notebook","--ip","8888:8888"]
+#ENTRYPOINT ["cat","/etc/hosts"]
 #CMD ["jupyter", "notebook", "--ip", "8888:8888"]
+#CMD ["localhost"]
 #CMD jupyter notebook --ip 8888:8888
