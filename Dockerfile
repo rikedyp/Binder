@@ -2,6 +2,8 @@
 #FROM dyalog/ubuntu:1804-mingw
 FROM dyalog/dyalog:17.1
 
+USER root
+
 RUN apt-get update 
 RUN apt-get install -y python3 python3-pip git
 RUN python3 -m pip install --no-cache --upgrade pip
