@@ -7,5 +7,5 @@ ENV HOME /home/${NB_USER}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
-RUN jupyter notebook --generate-config
+RUN jupyter notebook --generate-config -y
 CMD jupyter notebook --ip 8888:8888
