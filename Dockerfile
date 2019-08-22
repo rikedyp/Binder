@@ -1,12 +1,11 @@
 #FROM rikedyp/dyalog-jupyter:12345
 FROM dyalog/ubuntu:1804-mingw
 
-RUN apt-get update -y
-RUN apt-get install -y python3 python3-pip
-RUN pip install --no-cache --upgrade pip
-RUN pip install --no-cache-dir notebook==5.7.8
-
-
+RUN apt-get update 
+RUN apt-get install -y python3 python3-pip git
+RUN python3 -m pip install --no-cache --upgrade pip
+RUN python3 -m pip install --no-cache-dir notebook
+RUN alias python=python3
 
 #COPY ${HOME}/* 
 #USER root
@@ -30,4 +29,4 @@ WORKDIR ${HOME}
 USER ${NB_USER}
 
 #RUN jupyter notebook --generate-config
-CMD ["jupyter", "notebook", "--ip=8888:8888"]
+CMD ["jupyter", "notebook", "--ip", "8888:8888"]
