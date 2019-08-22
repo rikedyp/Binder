@@ -1,8 +1,8 @@
 #FROM rikedyp/dyalog-jupyter:12345
 FROM dyalog/ubuntu:1804-mingw
 
-RUN apt-get update
-RUN apt-get install python3 python3-pip
+RUN apt-get update -y
+RUN apt-get install -y python3 python3-pip
 RUN pip install --no-cache --upgrade pip
 RUN pip install --no-cache-dir notebook==5.7.8
 
