@@ -12,7 +12,7 @@ RUN alias python=python3
 
 #COPY ${HOME}/* 
 #USER root
-#RUN userdel -r dyalog
+RUN userdel -r dyalog
 # create user with a home directory
 ENV NB_USER jovyan
 ENV NB_UID 1000
