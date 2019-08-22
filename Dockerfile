@@ -1,5 +1,5 @@
 #FROM rikedyp/dyalog-jupyter:12345
-FROM raspbian/desktop:0.1.0
+FROM dyalog/ubuntu:1804-mingw
 
 RUN apt-get update
 RUN apt-get install python3 python3-pip
