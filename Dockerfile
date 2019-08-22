@@ -1,8 +1,8 @@
 #FROM rikedyp/dyalog-jupyter:12345
 FROM raspbian/desktop:0.1.0
 
-RUN pip install --no-cache --upgrade pip && \
-    pip install --no-cache-dir notebook==5.7.8
+RUN pip install --no-cache --upgrade pip
+RUN pip install --no-cache-dir notebook==5.7.8
 
 
 
