@@ -1,5 +1,6 @@
 #FROM rikedyp/dyalog-jupyter:12345
-FROM dyalog/ubuntu:1804-mingw
+#FROM dyalog/ubuntu:1804-mingw
+FROM dyalog/dyalog:17.1
 
 RUN apt-get update 
 RUN apt-get install -y python3 python3-pip git
