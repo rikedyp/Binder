@@ -1,1 +1,1 @@
-FROM rikedyp/dyalog-jupyter-binder:47
+FROM rikedyp/dyalog-jupyter-binder:48
